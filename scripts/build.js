@@ -157,7 +157,19 @@ function injectHtmlComponents() {
 }
 
 /**
- * Step 4: Add a .nojekyll file so GitHub Pages doesn't process the site.
+ * Step 4: Copy root index.html (public homepage) to dist.
+ */
+function copyRootIndex() {
+  const rootIndexSrc = path.resolve(__dirname, '../index.html');
+  const rootIndexDst = path.join(DIST_DIR, 'index.html');
+  if (fs.existsSync(rootIndexSrc)) {
+    fs.copyFileSync(rootIndexSrc, rootIndexDst);
+    console.log('[build] Copied root index.html → dist/index.html');
+  }
+}
+
+/**
+ * Step 5: Add a .nojekyll file so GitHub Pages doesn't process the site.
  */
 function addNoJekyll() {
   const noJekyllPath = path.join(DIST_DIR, '.nojekyll');
@@ -177,6 +189,7 @@ function main() {
     cleanDist();
     copySrc();
     injectHtmlComponents();
+    copyRootIndex();
     addNoJekyll();
 
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);

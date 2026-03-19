@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap');
+
 /* ============================================================
    EARTHCENTERED TRADITIONS COLLECTIVE — Main Stylesheet
    Mobile-first, BEM methodology, CSS custom properties
@@ -7,19 +9,19 @@
    DESIGN TOKENS (CSS Custom Properties)
    ============================================================ */
 :root {
-  /* Colors — Earth-tone palette */
-  --color-primary: #3a5a40;
-  --color-primary-light: #588157;
-  --color-primary-dark: #1b3a2b;
-  --color-secondary: #7c5c3e;
-  --color-secondary-light: #a47c5b;
-  --color-accent: #c9a84c;
-  --color-accent-light: #e4c97e;
-  --color-bg: #faf7f0;
-  --color-bg-alt: #f0ebe0;
-  --color-surface: #fff;
-  --color-text: #2c2c2c;
-  --color-text-muted: #6b6b6b;
+  /* Colors — Earth-tone palette (aligned with index.html design system) */
+  --color-primary: #2a4a18;
+  --color-primary-light: #3d6b22;
+  --color-primary-dark: #1a2e0e;
+  --color-secondary: #6b4226;
+  --color-secondary-light: #b5532a;
+  --color-accent: #b8860b;
+  --color-accent-light: #d4a830;
+  --color-bg: #f7edd8;
+  --color-bg-alt: #efe0c0;
+  --color-surface: #fbf4e4;
+  --color-text: #1e1208;
+  --color-text-muted: #6b4226;
   --color-text-on-primary: #faf7f0;
   --color-border: #d4c9b5;
   --color-error: #9b2226;
@@ -29,8 +31,10 @@
   --color-focus-ring: #c9a84c;
 
   /* Typography */
-  --font-heading: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
-  --font-body: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Cinzel Decorative', serif;
+  --font-subheading: 'Cinzel', serif;
+  --font-heading: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
+  --font-body: 'IM Fell English', Georgia, serif;
   --font-mono: 'Courier New', Courier, monospace;
 
   /* Font sizes (fluid type scale) */

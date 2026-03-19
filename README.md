@@ -1,12 +1,14 @@
-# Earthcentered Traditions Collective
+# Earthcentered Traditions Collective (E.T.C.)
 
 [![CI](https://github.com/KCoderVA/EarthcenteredTraditionsCollective/actions/workflows/ci.yml/badge.svg)](https://github.com/KCoderVA/EarthcenteredTraditionsCollective/actions/workflows/ci.yml)
 [![Deploy](https://github.com/KCoderVA/EarthcenteredTraditionsCollective/actions/workflows/deploy.yml/badge.svg)](https://github.com/KCoderVA/EarthcenteredTraditionsCollective/actions/workflows/deploy.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-gold.svg)](LICENSE)
 
-A community website for the **Earthcentered Traditions Collective** — a local extracurricular club celebrating earth-centered spiritual traditions, seasonal rituals, and the beauty of nature-based paths.
+> *Rooted in tradition. Growing together.*
 
-🌐 **Live site:** [kcoderva.github.io/EarthcenteredTraditionsCollective](https://kcoderva.github.io/EarthcenteredTraditionsCollective)
+**Live site:** https://kcoderva.github.io/EarthcenteredTraditionsCollective/
+
+A website for the **Earthcentered Traditions Collective** — a local extracurricular religious club celebrating earth-centered spiritual traditions including pagan, Wiccan, druidic, animist, and nature-based paths.
 
 ---
 
@@ -19,36 +21,34 @@ A community website for the **Earthcentered Traditions Collective** — a local 
 - [Development Workflow](#development-workflow)
 - [Contributing](#contributing)
 - [License](#license)
-- [Community](#community)
 
 ---
 
 ## Features
 
-- 🏠 **Public website** — Homepage, About, Events, and Contact pages
-- 🔐 **Members portal** — Access-controlled dashboard, document library, and calendar
-- 📅 **Event calendar** — Google Calendar embeds with RSVP via Google Forms
-- 📚 **Document library** — Searchable, filterable member resource library
-- 📧 **Mailing list** — Sign-up form integrated with Google Forms
-- ♿ **Accessible** — WCAG 2.1 AA compliant, semantic HTML5, keyboard navigable
-- 🌙 **Dark mode** — Respects `prefers-color-scheme`
-- 📱 **Mobile-first** — Responsive design for all screen sizes
-- 🤖 **AI-ready** — GitHub Copilot instructions + prompt templates for vibe-coding
+- 🌿 **Public homepage** — introductory pages, mission, traditions, events preview
+- 📅 **Events calendar** — upcoming events, RSVP links, Google Calendar embed
+- 📋 **Google Forms integration** — mailing list signup, contact, RSVP
+- 🔐 **Members area** — access-controlled document library and calendar
+- 📚 **Document library** — categorized members-only resources
+- ✉️ **Mailing list** — interactive subscription management
+- 🤖 **AI-assisted development** — GitHub Copilot throughout
 
 ---
 
 ## Tech Stack
 
 | Layer | Technology |
-|-------|------------|
-| Frontend | Vanilla HTML5, CSS3, JavaScript (ES2022) |
-| Hosting | GitHub Pages (static site) |
-| Build | Node.js 20, custom build script |
-| Linting | ESLint, stylelint, html-validate |
-| Formatting | Prettier |
-| Testing | Jest + jsdom |
-| CI/CD | GitHub Actions |
-| Integrations | Google Forms, Google Calendar, Google Drive |
+|-------|-----------|
+| Markup | HTML5 (semantic, WCAG 2.1 AA) |
+| Styling | CSS3 (custom properties, BEM, mobile-first) |
+| Fonts | Cinzel Decorative · Cinzel · IM Fell English (Google Fonts) |
+| Scripting | Vanilla JavaScript (ES2022 modules) |
+| Build | Node.js 20, npm scripts |
+| Dev server | live-server |
+| Linting | ESLint · Prettier · stylelint · html-validate |
+| CI/CD | GitHub Actions → GitHub Pages |
+| AI tooling | GitHub Copilot + Copilot Chat |
 
 ---
 
@@ -56,40 +56,38 @@ A community website for the **Earthcentered Traditions Collective** — a local 
 
 ### Prerequisites
 
-- **Node.js** ≥ 20.x ([nodejs.org](https://nodejs.org/))
-- **npm** ≥ 10.x (bundled with Node.js 20)
-- **Git** ≥ 2.40 ([git-scm.com](https://git-scm.com/))
-- **VS Code** (recommended) with the [workspace extensions](.vscode/extensions.json)
+- [Node.js](https://nodejs.org/) 20 or later
+- npm 9 or later
+- Git
 
 ### Installation
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/KCoderVA/EarthcenteredTraditionsCollective.git
 cd EarthcenteredTraditionsCollective
-
-# 2. Install dependencies (also sets up git pre-commit hook)
-npm install
-
-# 3. Open in VS Code (recommended)
-code EarthcenteredTraditionsCollective.code-workspace
-# Install the recommended extensions when prompted
-
-# 4. Start the development server
-npm run dev
-# Opens http://localhost:5500 with live reload
+npm install        # installs deps and sets up git hooks
 ```
 
-### Quick Commands
+### Development
 
 ```bash
-npm run dev           # Start dev server
-npm run build         # Build to dist/
-npm run lint          # Lint JavaScript
-npm run format        # Format all files
-npm run validate:html # Validate HTML
-npm test              # Run tests
-npm run ci            # Full CI check (lint + format + test)
+npm run dev        # starts live-server at http://localhost:5500
+```
+
+The homepage (`index.html`) is served directly from the repository root. Inner pages (events, about, contact, members area) live in `src/public/`.
+
+### Build
+
+```bash
+npm run build      # copies everything to dist/
+```
+
+### Lint & Format
+
+```bash
+npm run lint       # ESLint all JS
+npm run format     # Prettier all files
+npm run lint:fix   # auto-fix lint issues
 ```
 
 ---
@@ -98,69 +96,91 @@ npm run ci            # Full CI check (lint + format + test)
 
 ```
 EarthcenteredTraditionsCollective/
-├── .github/
-│   ├── workflows/           # CI/CD pipelines
-│   ├── ISSUE_TEMPLATE/      # Issue forms (bug, feature, content)
-│   ├── prompts/             # GitHub Copilot Chat prompt templates
-│   └── copilot-instructions.md
-├── .vscode/                 # VS Code workspace settings
-├── docs/                    # Project documentation
-├── scripts/                 # Build & utility scripts
-├── hooks/                   # Git hook sources
-├── src/public/              # Web root
-│   ├── index.html           # Homepage
-│   ├── about.html
-│   ├── events.html
-│   ├── contact.html
-│   ├── members/             # Members-only area
-│   ├── assets/css/          # Stylesheets
-│   ├── assets/js/           # JavaScript modules
-│   ├── assets/images/
-│   └── components/          # Reusable HTML snippets
+├── index.html                   ← PUBLIC HOMEPAGE (GitHub Pages root)
+├── .nojekyll                    ← Disables Jekyll processing
 ├── package.json
 ├── README.md
 ├── CONTRIBUTING.md
 ├── CODE_OF_CONDUCT.md
-└── LICENSE
+├── LICENSE
+│
+├── src/
+│   └── public/                  ← Inner pages & assets
+│       ├── about.html
+│       ├── events.html
+│       ├── contact.html
+│       ├── members/
+│       │   ├── index.html       ← Members portal
+│       │   ├── library.html
+│       │   └── calendar.html
+│       ├── assets/
+│       │   ├── css/
+│       │   │   ├── main.css     ← Global styles (design tokens)
+│       │   │   └── members.css  ← Members area styles
+│       │   ├── js/
+│       │   │   ├── main.js
+│       │   │   ├── auth.js
+│       │   │   ├── events.js
+│       │   │   ├── mailing-list.js
+│       │   │   └── document-library.js
+│       │   └── images/
+│       └── components/          ← Reusable HTML snippets
+│
+├── src/assets/css/
+│   └── design-tokens.css        ← Authoritative design system CSS
+│
+├── docs/                        ← Project documentation
+├── scripts/                     ← Build & setup scripts
+├── hooks/                       ← Git hooks
+│
+├── .github/
+│   ├── copilot-instructions.md  ← AI coding guidance
+│   ├── prompts/                 ← Copilot Chat prompt templates
+│   ├── workflows/               ← CI/CD pipelines
+│   └── ISSUE_TEMPLATE/
+│
+└── .vscode/                     ← VS Code workspace settings
 ```
-
-Full directory tree is in [docs/architecture.md](docs/architecture.md).
 
 ---
 
 ## Development Workflow
 
-1. **Branch** — `git checkout -b feat/your-feature`
-2. **Develop** — Dev server auto-reloads at `http://localhost:5500`
-3. **Check** — `npm run ci` (also runs via pre-commit hook automatically)
-4. **Commit** — [Conventional Commits](https://www.conventionalcommits.org/): `feat(events): add Imbolc event card`
-5. **PR** — Push and open a PR; GitHub Actions runs CI checks automatically
+1. **Create a branch** from `main`: `git checkout -b feature/your-feature`
+2. **Make changes** — the AI will follow `copilot-instructions.md` conventions
+3. **Lint & test**: `npm run lint && npm test`
+4. **Commit** using [Conventional Commits](https://www.conventionalcommits.org/):
+   - `feat: add event RSVP form`
+   - `fix: correct nav link alignment`
+   - `docs: update members area guide`
+5. **Push & open a PR** — CI runs automatically
+6. **Merge to main** — deploy to GitHub Pages runs automatically
 
-See [docs/development-guide.md](docs/development-guide.md) for full details.
+---
+
+## Design System
+
+The homepage `index.html` is the **canonical design reference**. All pages use:
+
+- **Parchment** color palette (golds, deep greens, warm browns)
+- **Cinzel Decorative** for display headings
+- **Cinzel** for navigation and subheadings
+- **IM Fell English** for body text
+- Botanical SVG border decorators between sections
+- Earth-centered nature-inspired visual language
+
+See [`src/assets/css/design-tokens.css`](src/assets/css/design-tokens.css) for the full design token reference.
 
 ---
 
 ## Contributing
 
-We welcome contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on submitting issues and pull requests.
 
-- 🐛 [Report a bug](.github/ISSUE_TEMPLATE/bug_report.yml)
-- ✨ [Request a feature](.github/ISSUE_TEMPLATE/feature_request.yml)
-- 📝 [Request a content update](.github/ISSUE_TEMPLATE/content_update.yml)
-- 💬 [GitHub Discussions](https://github.com/KCoderVA/EarthcenteredTraditionsCollective/discussions)
+All contributors are expected to follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ---
 
 ## License
 
-[MIT License](LICENSE) © 2026 KCoderVA / Earthcentered Traditions Collective
-
----
-
-## Community
-
-- 🌿 [Live site](https://kcoderva.github.io/EarthcenteredTraditionsCollective)
-- 💬 [GitHub Discussions](https://github.com/KCoderVA/EarthcenteredTraditionsCollective/discussions)
-- 📧 hello@earthcenteredtraditions.org
-
-*Rooted in the earth. Guided by the seasons. United in community.* 🌙
+[MIT](LICENSE) © 2026 KCoderVA / Earthcentered Traditions Collective

@@ -15,6 +15,7 @@ This is the website repository for the **Earthcentered Traditions Collective**, 
 
 - **Hosting:** GitHub Pages (static site, no server-side runtime)
 - **Languages:** Vanilla HTML5, CSS3, JavaScript (ES2022 modules) — no frameworks
+- **Google Fonts:** Cinzel Decorative, Cinzel, IM Fell English
 - **Build tooling:** Node.js 20, npm scripts, live-server (dev), custom build script
 - **Linting/Formatting:** ESLint, Prettier, stylelint, html-validate
 - **Testing:** Jest + jsdom
@@ -35,6 +36,8 @@ This is the website repository for the **Earthcentered Traditions Collective**, 
   - IDs: `kebab-case`
 
 ## File Organization
+
+> **Important:** The main public homepage (`index.html`) lives at the **repository root** (`/index.html`) and is served directly by GitHub Pages at https://kcoderva.github.io/EarthcenteredTraditionsCollective/. All other pages are in `src/public/`.
 
 ```
 src/public/
@@ -62,6 +65,65 @@ src/public/
     ├── footer.html
     └── event-card.html
 ```
+
+## Design System
+
+All design decisions follow the user's `index.html` as the canonical reference.
+
+### Fonts (Google Fonts)
+- **Display/Titles (`--font-display`):** `Cinzel Decorative` — used for `h1`, major headings, logo title, footer brand name
+- **Subheadings/Navigation (`--font-subheading`):** `Cinzel` — used for `h3`, nav links, labels, pills, captions
+- **Body (`--font-body`):** `IM Fell English` — all body text, blockquotes, paragraphs (italic variant for emphasis)
+
+Always include the Google Fonts link tag:
+```html
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+```
+
+### Color Palette
+| Token | Hex | Usage |
+|-------|-----|-------|
+| `--etc-parchment` | `#F7EDD8` | Main page background |
+| `--etc-parchment2` | `#EFE0C0` | Alternate section background |
+| `--etc-parchment3` | `#E8D5A8` | Blockquote / accent backgrounds |
+| `--etc-green-deep` | `#2A4A18` | Primary — header bg, h2 text, nav hover |
+| `--etc-green-mid` | `#3D6B22` | Primary mid — card top border |
+| `--etc-green-light` | `#6B9B3A` | Primary light — botanical accent |
+| `--etc-gold` | `#B8860B` | Accent — borders, `h3` nav links, bullet icons |
+| `--etc-gold-light` | `#D4A830` | Accent light — hover states, h1 color |
+| `--etc-gold-pale` | `#F0D878` | Accent very light — subtle highlights |
+| `--etc-terracotta` | `#B5532A` | Event card titles, call-to-action accents |
+| `--etc-rose` | `#C07868` | List bullet accents, soft decorative use |
+| `--etc-brown-dark` | `#3B2410` | Nav background, footer background |
+| `--etc-brown-mid` | `#6B4226` | h3 color, blockquote text, muted text |
+| `--etc-ink` | `#1E1208` | Primary body text |
+| `--etc-cream` | `#FBF4E4` | Card surfaces, form backgrounds |
+
+### Layout & Components
+- All pages use the same header/nav/footer pattern as `index.html`
+- Sections max-width: 900px, padding: 3.2rem 1.8rem
+- Cards use `.card-grid` (auto-fit, minmax 230px) with gold border and top-stripe gradient
+- Botanical SVG border dividers between sections
+- Background: parchment with subtle SVG fractalNoise texture overlay
+- Navigation: sticky, brown-dark bg, 2px gold borders
+- All form embeds: dark green gradient section, cream+gold iframe wrapper
+
+### Key CSS Classes (from index.html)
+- `.header-logo` — circular logo image (50% border-radius, gold ring)
+- `.header-org` — org name label (Cinzel, small caps)
+- `.header-title` — main h1 (Cinzel Decorative)
+- `.header-abbr` — "E.T.C." abbreviation (Cinzel, wide spacing)
+- `.header-tagline` — tagline (IM Fell English italic)
+- `.moon-row` — SVG moon phase icon row
+- `.banner-img` — full-width hero image
+- `.bot-border` / `.bot-border-flip` — botanical SVG wave borders
+- `.card-grid` — responsive card layout
+- `.tradition-list` — leaf-styled two-column list
+- `.wheel-wrap` — Wheel of the Year SVG container
+- `.values-ribbon` / `.value-pill` — pill tag components
+- `.event-card` — event feature card with poster image
+- `.form-section` — Google Form embed section (dark green bg)
+- `.form-frame-wrap` — iframe wrapper (cream + gold border)
 
 ## Accessibility Requirements (WCAG 2.1 AA)
 
@@ -177,3 +239,17 @@ This project is designed for AI-assisted development ("vibe coding"). Guidelines
 - Keep AI-generated comments and JSDoc; clean up hallucinated or incorrect logic
 - Commit frequently with descriptive messages so AI context stays fresh
 - Use Copilot Chat's `/fix`, `/explain`, and `/doc` slash commands for targeted tasks
+
+## index.html — Canonical Homepage Reference
+
+The file `/index.html` at the repository root is the **canonical design reference** for the entire project. When generating new pages or components:
+
+1. **Always match** the exact color tokens, fonts, and component patterns from `index.html`
+2. **Copy** the `<head>` boilerplate (meta tags, Google Fonts link, CSS links)
+3. **Reuse** the same `<header>`, `<nav>`, and `<footer>` HTML structure
+4. **Use** the same CSS class names for shared components (`.card`, `.event-card`, `.bot-border`, etc.)
+5. **Do not** introduce new color values or fonts that aren't in the established design system
+6. **Embed** Google Forms using the same `.form-section` + `.form-frame-wrap` pattern
+
+The homepage is publicly accessible at:
+**https://kcoderva.github.io/EarthcenteredTraditionsCollective/**
