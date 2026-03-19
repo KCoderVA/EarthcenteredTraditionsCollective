@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Members portal for the Earthcentered Traditions Collective. Log in to access the document library, calendar, and members-only resources."
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; frame-src https://docs.google.com https://calendar.google.com; img-src 'self' data: https:;"
+    />
+    <title>Members Portal | Earthcentered Traditions Collective</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/members.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- INCLUDE:nav -->
+
+    <main id="main-content">
+      <!-- Login View (shown when not authenticated) -->
+      <section
+        class="auth-section"
+        id="login-section"
+        aria-label="Member login"
+      >
+        <div class="container">
+          <div class="auth-card">
+            <div class="auth-card__header">
+              <span class="auth-card__icon" aria-hidden="true">🌿</span>
+              <h1 class="auth-card__title">Members Portal</h1>
+              <p class="auth-card__subtitle">
+                Sign in to access your member resources, document library, and
+                exclusive events.
+              </p>
+            </div>
+
+            <form
+              class="auth-form"
+              id="login-form"
+              novalidate
+              aria-label="Login form"
+            >
+              <div
+                class="form-alert form-alert--error"
+                id="login-error"
+                role="alert"
+                aria-live="assertive"
+                hidden
+              ></div>
+
+              <div class="form-group">
+                <label class="form-label" for="username">Username</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="username"
+                  name="username"
+                  autocomplete="username"
+                  required
+                  aria-required="true"
+                  placeholder="Enter your username"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <input
+                  class="form-input"
+                  type="password"
+                  id="password"
+                  name="password"
+                  autocomplete="current-password"
+                  required
+                  aria-required="true"
+                  placeholder="Enter your password"
+                />
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--full-width">
+                Sign In
+              </button>
+
+              <p class="auth-form__help">
+                Not yet a member?
+                <a href="../contact.html">Contact us to join</a>
+              </p>
+              <p class="auth-form__note">
+                <small>
+                  Forgot your password? Contact the Circle Coordinator for
+                  assistance.
+                </small>
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dashboard View (shown when authenticated) -->
+      <div class="members-layout" id="dashboard-section" hidden>
+        <nav class="members-sidebar" aria-label="Members navigation">
+          <div class="members-sidebar__header">
+            <span class="members-sidebar__icon" aria-hidden="true">🌿</span>
+            <span class="members-sidebar__title">Members Area</span>
+          </div>
+          <ul class="members-sidebar__nav" role="list">
+            <li>
+              <a
+                href="/members/"
+                class="members-sidebar__link members-sidebar__link--active"
+                aria-current="page"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="library.html" class="members-sidebar__link">Document Library</a>
+            </li>
+            <li>
+              <a href="calendar.html" class="members-sidebar__link">Calendar &amp; Events</a>
+            </li>
+          </ul>
+          <div class="members-sidebar__footer">
+            <button
+              class="members-sidebar__link members-sidebar__link--logout"
+              id="logout-btn"
+              type="button"
+            >
+              Sign Out
+            </button>
+          </div>
+        </nav>
+
+        <div class="members-layout__content">
+          <header class="members-header">
+            <h1 class="members-header__title">Welcome back, <span id="display-name">Member</span>!</h1>
+            <p class="members-header__subtitle">
+              Here's what's happening in the collective.
+            </p>
+          </header>
+
+          <!-- Dashboard Cards -->
+          <div class="dashboard-grid">
+            <div class="dashboard-card">
+              <h2 class="dashboard-card__title">📅 Next Event</h2>
+              <p class="dashboard-card__value">Samhain Gathering</p>
+              <p class="dashboard-card__detail">October 31, 2025 · 7:00 PM</p>
+              <a href="calendar.html" class="btn btn--primary btn--sm">View Calendar</a>
+            </div>
+
+            <div class="dashboard-card">
+              <h2 class="dashboard-card__title">📚 Document Library</h2>
+              <p class="dashboard-card__value">12 Documents</p>
+              <p class="dashboard-card__detail">Last updated: October 2025</p>
+              <a href="library.html" class="btn btn--primary btn--sm">Browse Library</a>
+            </div>
+
+            <div class="dashboard-card">
+              <h2 class="dashboard-card__title">🌙 Moon Phase</h2>
+              <p class="dashboard-card__value" id="moon-phase-display">Waxing Gibbous</p>
+              <p class="dashboard-card__detail">Next full moon: November 5</p>
+            </div>
+          </div>
+
+          <!-- Announcements -->
+          <section class="members-announcements" aria-label="Announcements">
+            <h2>Announcements</h2>
+            <div class="announcement-card">
+              <div class="announcement-card__date">October 15, 2025</div>
+              <h3 class="announcement-card__title">Samhain RSVP Now Open</h3>
+              <p>
+                The RSVP form for our Samhain Gathering is now live! Please RSVP by October
+                28th so we can plan accordingly. See the calendar for details.
+              </p>
+            </div>
+            <div class="announcement-card">
+              <div class="announcement-card__date">October 1, 2025</div>
+              <h3 class="announcement-card__title">New Study Materials Added</h3>
+              <p>
+                Four new documents have been added to the Document Library under "Study
+                Materials" — including a guide to Samhain traditions across cultures.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- INCLUDE:footer -->
+
+    <script src="../assets/js/main.js" type="module"></script>
+    <script src="../assets/js/auth.js" type="module"></script>
+  </body>
+</html>

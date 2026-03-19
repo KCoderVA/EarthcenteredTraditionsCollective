@@ -1,0 +1,23 @@
+{
+  "extends": ["html-recommended"],
+  "rules": {
+    "attr-quotes": "error",
+    "doctype-style": "error",
+    "element-required-attributes": "error",
+    "meta-refresh": "error",
+    "no-raw-characters": "error",
+    "void-style": "error",
+    "aria-label-misuse": "error",
+    "input-missing-label": "error",
+    "missing-doctype": "error",
+    "no-deprecated-attr": "error",
+    "no-redundant-role": "warn",
+    "prefer-button": "warn",
+    "require-sri": "off",
+    "script-element": "off"
+  },
+  "elements": ["html5"],
+  "transform": {
+    "^.*\\.html$": "@html-validate/html-validate-html"
+  }
+}
