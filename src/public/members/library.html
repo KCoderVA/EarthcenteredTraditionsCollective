@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Members document library — Earthcentered Traditions Collective." />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:;"
+    />
+    <title>Document Library | Members | Earthcentered Traditions Collective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/members.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Auth check runs before page renders (handled by document-library.js) -->
+
+    <!-- INCLUDE:nav -->
+
+    <main id="main-content">
+      <div class="members-layout">
+        <nav class="members-sidebar" aria-label="Members navigation">
+          <div class="members-sidebar__header">
+            <span class="members-sidebar__icon" aria-hidden="true">🌿</span>
+            <span class="members-sidebar__title">Members Area</span>
+          </div>
+          <ul class="members-sidebar__nav" role="list">
+            <li>
+              <a href="/members/" class="members-sidebar__link">Dashboard</a>
+            </li>
+            <li>
+              <a
+                href="library.html"
+                class="members-sidebar__link members-sidebar__link--active"
+                aria-current="page"
+                >Document Library</a
+              >
+            </li>
+            <li>
+              <a href="calendar.html" class="members-sidebar__link">Calendar &amp; Events</a>
+            </li>
+          </ul>
+          <div class="members-sidebar__footer">
+            <button
+              class="members-sidebar__link members-sidebar__link--logout"
+              id="logout-btn"
+              type="button"
+            >
+              Sign Out
+            </button>
+          </div>
+        </nav>
+
+        <div class="members-layout__content">
+          <header class="members-header">
+            <h1 class="members-header__title">Document Library</h1>
+            <p class="members-header__subtitle">
+              Members-only resources, ritual guides, study materials, and administrative documents.
+            </p>
+          </header>
+
+          <!-- Search and Filter -->
+          <div class="library-toolbar">
+            <div class="library-search">
+              <label for="library-search-input" class="visually-hidden">Search documents</label>
+              <input
+                type="search"
+                id="library-search-input"
+                class="form-input library-search__input"
+                placeholder="Search documents…"
+                aria-label="Search documents"
+              />
+            </div>
+            <div
+              class="library-filter"
+              role="group"
+              aria-label="Filter by category"
+            >
+              <button
+                class="filter-btn filter-btn--active"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                All
+              </button>
+              <button class="filter-btn" data-filter="rituals" aria-pressed="false">
+                Rituals
+              </button>
+              <button class="filter-btn" data-filter="study" aria-pressed="false">
+                Study
+              </button>
+              <button class="filter-btn" data-filter="events" aria-pressed="false">
+                Events
+              </button>
+              <button class="filter-btn" data-filter="admin" aria-pressed="false">
+                Admin
+              </button>
+            </div>
+          </div>
+
+          <!-- Results count -->
+          <p
+            class="library-results-count"
+            id="library-results-count"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            Showing all 12 documents
+          </p>
+
+          <!-- Document Grid -->
+          <div class="library-grid" id="library-grid" role="list" aria-label="Document library">
+            <!-- Rituals & Ceremonies -->
+            <article
+              class="document-card"
+              role="listitem"
+              data-category="rituals"
+              data-title="Samhain Ritual Script"
+            >
+              <div class="document-card__icon" aria-hidden="true">📜</div>
+              <div class="document-card__body">
+                <h2 class="document-card__title">
+                  <a
+                    href="https://drive.google.com/file/d/PLACEHOLDER/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="document-card__link"
+                    >Samhain Ritual Script 2025</a
+                  >
+                </h2>
+                <p class="document-card__description">
+                  Full group ritual script for the Samhain sabbat, including opening, remembrance
+                  ceremony, divination circle, and closing.
+                </p>
+                <p class="document-card__meta">
+                  <span class="document-card__type">PDF</span> ·
+                  <span class="document-card__category">Rituals &amp; Ceremonies</span> ·
+                  <time datetime="2025-10-01">October 2025</time>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="document-card"
+              role="listitem"
+              data-category="rituals"
+              data-title="Full Moon Esbat Guide"
+            >
+              <div class="document-card__icon" aria-hidden="true">🌕</div>
+              <div class="document-card__body">
+                <h2 class="document-card__title">
+                  <a
+                    href="https://drive.google.com/file/d/PLACEHOLDER/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="document-card__link"
+                    >Full Moon Esbat Guide</a
+                  >
+                </h2>
+                <p class="document-card__description">
+                  A general guide for hosting or participating in a full moon circle, with
+                  suggestions for invocations, workings, and closing.
+                </p>
+                <p class="document-card__meta">
+                  <span class="document-card__type">PDF</span> ·
+                  <span class="document-card__category">Rituals &amp; Ceremonies</span> ·
+                  <time datetime="2025-03-01">March 2025</time>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="document-card"
+              role="listitem"
+              data-category="rituals"
+              data-title="Wheel of the Year Overview"
+            >
+              <div class="document-card__icon" aria-hidden="true">☀️</div>
+              <div class="document-card__body">
+                <h2 class="document-card__title">
+                  <a
+                    href="https://drive.google.com/file/d/PLACEHOLDER/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="document-card__link"
+                    >Wheel of the Year — Overview &amp; Ritual Themes</a
+                  >
+                </h2>
+                <p class="document-card__description">
+                  Descriptions of all eight sabbats, their themes, correspondences, and
+                  suggested ritual elements.
+                </p>
+                <p class="document-card__meta">
+                  <span class="document-card__type">PDF</span> ·
+                  <span class="document-card__category">Rituals &amp; Ceremonies</span> ·
+                  <time datetime="2024-12-01">December 2024</time>
+                </p>
+              </div>
+            </article>
+
+            <!-- Study Materials -->
+            <article
+              class="document-card"
+              role="listitem"
+              data-category="study"
+              data-title="Introduction to Wicca"
+            >
+              <div class="document-card__icon" aria-hidden="true">📖</div>
+              <div class="document-card__body">
+                <h2 class="document-card__title">
+                  <a
+                    href="https://drive.google.com/file/d/PLACEHOLDER/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="document-card__link"
+                    >Introduction to Wicca — Reading Guide</a
+                  >
+                </h2>
+                <p class="document-card__description">
+                  A curated reading list and introduction to Wiccan theology, practice, and
+                  history for new and curious members.
+                </p>
+                <p class="document-card__meta">
+                  <span class="document-card__type">PDF</span> ·
+                  <span class="document-card__category">Study Materials</span> ·
+                  <time datetime="2025-01-01">January 2025</time>
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="document-card"
+              role="listitem"
+              data-category="study"
+              data-title="Celtic Mythology Primer"
+            >
+              <div class="document-card__icon" aria-hidden="true">🗿</div>
+              <div class="document-card__body">
+                <h2 class="document-card__title">
+                  <a
+                    href="https://drive.google.com/file/d/PLACEHOLDER/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="document-card__link"
+                    >Celtic Mythology Primer</a
+                  >
+                </h2>
+                <p class="document-card__description">
+                  An accessible introduction to the major deities, cycles, and mythological themes
+                  of the Celtic traditions.
+                </p>
+                <p class="document-card__meta">
+                  <span class="document-card__type">PDF</span> ·
+                  <span class="document-card__category">Study Materials</span> ·
+                  <time datetime="2024-09-01">September 2024</time>
+                </p>
+              </div>
+            </article>
+
+            <!-- Event Planning -->
+            <article
+              class="document-card"
+              role="listitem"
+              data-category="events"
+              data-title="Event Planning Checklist"
+            >
+              <div class="document-card__icon" aria-hidden="true">✅</div>
+              <div class="document-card__body">
+                <h2 class="document-card__title">
+                  <a
+                    href="https://drive.google.com/file/d/PLACEHOLDER/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="document-card__link"
+                    >Community Event Planning Checklist</a
+                  >
+                </h2>
+                <p class="document-card__description">
+                  Step-by-step checklist for planning a collective event: venue, supplies,
+                  communications, setup, and cleanup.
+                </p>
+                <p class="document-card__meta">
+                  <span class="document-card__type">DOCX</span> ·
+                  <span class="document-card__category">Event Planning</span> ·
+                  <time datetime="2025-02-01">February 2025</time>
+                </p>
+              </div>
+            </article>
+
+            <!-- Administrative -->
+            <article
+              class="document-card"
+              role="listitem"
+              data-category="admin"
+              data-title="Club Bylaws"
+            >
+              <div class="document-card__icon" aria-hidden="true">📋</div>
+              <div class="document-card__body">
+                <h2 class="document-card__title">
+                  <a
+                    href="https://drive.google.com/file/d/PLACEHOLDER/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="document-card__link"
+                    >Earthcentered Traditions Collective — Bylaws</a
+                  >
+                </h2>
+                <p class="document-card__description">
+                  The governing bylaws of the collective, including membership, decision-making,
+                  and code of conduct.
+                </p>
+                <p class="document-card__meta">
+                  <span class="document-card__type">PDF</span> ·
+                  <span class="document-card__category">Administrative</span> ·
+                  <time datetime="2024-01-01">January 2024</time>
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Empty State (hidden by default, shown when no search results) -->
+          <div class="library-empty-state" id="library-empty" hidden>
+            <span class="library-empty-state__icon" aria-hidden="true">🔍</span>
+            <p>No documents found matching your search.</p>
+            <button class="btn btn--ghost" id="library-clear-search">Clear search</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- INCLUDE:footer -->
+
+    <script src="../assets/js/main.js" type="module"></script>
+    <script src="../assets/js/auth.js" type="module"></script>
+    <script src="../assets/js/document-library.js" type="module"></script>
+  </body>
+</html>

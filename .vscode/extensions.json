@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ritwickdey.liveserver",
+    "eamodio.gitlens",
+    "github.copilot",
+    "github.copilot-chat",
+    "ecmel.vscode-html-css",
+    "zignd.html-css-class-completion",
+    "DavidAnson.vscode-markdownlint",
+    "stylelint.vscode-stylelint",
+    "orta.vscode-jest",
+    "mechatroner.rainbow-csv",
+    "wayou.vscode-todo-highlight",
+    "usernamehw.errorlens",
+    "streetsidesoftware.code-spell-checker",
+    "humao.rest-client",
+    "rangav.vscode-thunder-client"
+  ]
+}

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Community Discussions
+    url: https://github.com/KCoderVA/EarthcenteredTraditionsCollective/discussions
+    about: Ask questions, share ideas, and discuss the Earthcentered Traditions Collective with the community.
+  - name: Members Forum
+    url: https://github.com/KCoderVA/EarthcenteredTraditionsCollective/discussions/categories/members
+    about: Members-only discussion area for club topics and event planning.

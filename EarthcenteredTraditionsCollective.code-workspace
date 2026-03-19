@@ -1,0 +1,148 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.rulers": [100],
+    "editor.renderWhitespace": "trailing",
+    "eslint.enable": true,
+    "eslint.validate": ["javascript", "html"],
+    "files.eol": "\n",
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/.cache": true,
+      "**/coverage": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/.cache": true,
+      "**/coverage": true,
+      "**/package-lock.json": true
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.osx": "bash",
+    "liveServer.settings.port": 5500,
+    "liveServer.settings.root": "/src/public",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "css.validate": true,
+    "html.format.enable": true,
+    "emmet.includeLanguages": {
+      "html": "html"
+    },
+    "cSpell.words": [
+      "earthcentered",
+      "Earthcentered",
+      "samhain",
+      "beltane",
+      "imbolc",
+      "lughnasadh",
+      "ostara",
+      "mabon",
+      "yule",
+      "sabbat",
+      "esbat",
+      "pagan",
+      "wicca",
+      "druid",
+      "solstice",
+      "equinox",
+      "RSVP",
+      "stylelint",
+      "jsdom"
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "ritwickdey.liveserver",
+      "eamodio.gitlens",
+      "github.copilot",
+      "github.copilot-chat",
+      "ecmel.vscode-html-css",
+      "zignd.html-css-class-completion",
+      "DavidAnson.vscode-markdownlint",
+      "stylelint.vscode-stylelint",
+      "orta.vscode-jest",
+      "mechatroner.rainbow-csv",
+      "wayou.vscode-todo-highlight",
+      "usernamehw.errorlens",
+      "streetsidesoftware.code-spell-checker",
+      "humao.rest-client",
+      "rangav.vscode-thunder-client"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Launch in Chrome",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:5500",
+        "webRoot": "${workspaceFolder}/src/public"
+      },
+      {
+        "name": "Run Tests",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/node_modules/.bin/jest",
+        "args": ["--runInBand"],
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen"
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Dev Server",
+        "type": "shell",
+        "command": "npm run dev",
+        "group": "build",
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "problemMatcher": []
+      },
+      {
+        "label": "Build",
+        "type": "shell",
+        "command": "npm run build",
+        "group": { "kind": "build", "isDefault": true },
+        "presentation": { "reveal": "always" },
+        "problemMatcher": ["$tsc"]
+      },
+      {
+        "label": "Lint",
+        "type": "shell",
+        "command": "npm run lint",
+        "group": "build",
+        "presentation": { "reveal": "always" },
+        "problemMatcher": ["$eslint-stylish"]
+      },
+      {
+        "label": "Format",
+        "type": "shell",
+        "command": "npm run format",
+        "group": "build",
+        "presentation": { "reveal": "always" },
+        "problemMatcher": []
+      },
+      {
+        "label": "Test",
+        "type": "shell",
+        "command": "npm test",
+        "group": { "kind": "test", "isDefault": true },
+        "presentation": { "reveal": "always" },
+        "problemMatcher": []
+      }
+    ]
+  }
+}

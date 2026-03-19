@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Members calendar and RSVP — Earthcentered Traditions Collective." />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; frame-src https://docs.google.com https://calendar.google.com https://forms.gle; img-src 'self' data: https:;"
+    />
+    <title>Calendar &amp; Events | Members | Earthcentered Traditions Collective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/members.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- INCLUDE:nav -->
+
+    <main id="main-content">
+      <div class="members-layout">
+        <nav class="members-sidebar" aria-label="Members navigation">
+          <div class="members-sidebar__header">
+            <span class="members-sidebar__icon" aria-hidden="true">🌿</span>
+            <span class="members-sidebar__title">Members Area</span>
+          </div>
+          <ul class="members-sidebar__nav" role="list">
+            <li>
+              <a href="/members/" class="members-sidebar__link">Dashboard</a>
+            </li>
+            <li>
+              <a href="library.html" class="members-sidebar__link">Document Library</a>
+            </li>
+            <li>
+              <a
+                href="calendar.html"
+                class="members-sidebar__link members-sidebar__link--active"
+                aria-current="page"
+                >Calendar &amp; Events</a
+              >
+            </li>
+          </ul>
+          <div class="members-sidebar__footer">
+            <button
+              class="members-sidebar__link members-sidebar__link--logout"
+              id="logout-btn"
+              type="button"
+            >
+              Sign Out
+            </button>
+          </div>
+        </nav>
+
+        <div class="members-layout__content">
+          <header class="members-header">
+            <h1 class="members-header__title">Calendar &amp; Events</h1>
+            <p class="members-header__subtitle">
+              Full event calendar including members-only gatherings and RSVP forms.
+            </p>
+          </header>
+
+          <!-- Full Google Calendar Embed -->
+          <section class="members-calendar-section" aria-label="Community calendar">
+            <h2>Community Calendar</h2>
+            <div class="calendar-embed calendar-embed--full" role="region" aria-label="Full event calendar">
+              <!-- Replace YOUR_MEMBERS_CALENDAR_ID with actual calendar ID -->
+              <iframe
+                src="https://calendar.google.com/calendar/embed?src=YOUR_MEMBERS_CALENDAR_ID%40group.calendar.google.com&ctz=America%2FNew_York&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=1&showTz=1"
+                title="Earthcentered Traditions Collective Full Members Calendar"
+                class="calendar-embed__iframe calendar-embed__iframe--full"
+                frameborder="0"
+                scrolling="no"
+                loading="lazy"
+              ></iframe>
+              <p class="calendar-embed__fallback">
+                <a
+                  href="https://calendar.google.com/calendar/r?cid=YOUR_MEMBERS_CALENDAR_ID%40group.calendar.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open in Google Calendar ↗</a
+                >
+              </p>
+            </div>
+          </section>
+
+          <!-- Upcoming Members Events List -->
+          <section class="upcoming-events-list" aria-label="Upcoming events list">
+            <h2>Upcoming Events</h2>
+            <div class="events-list">
+              <div class="events-list__item">
+                <div class="events-list__date">
+                  <span class="events-list__month">Oct</span>
+                  <span class="events-list__day">31</span>
+                </div>
+                <div class="events-list__details">
+                  <h3 class="events-list__title">Samhain Gathering</h3>
+                  <p class="events-list__meta">7:00 PM – 10:30 PM · Riverside Community Center</p>
+                  <p class="events-list__description">
+                    Annual Samhain circle — remembrance, divination, and community gathering.
+                  </p>
+                  <div class="events-list__actions">
+                    <a
+                      href="https://forms.gle/YOUR_SAMHAIN_RSVP_FORM"
+                      class="btn btn--primary btn--sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="RSVP for Samhain Gathering"
+                      >RSVP Now</a
+                    >
+                  </div>
+                </div>
+                <div class="events-list__badge events-list__badge--open">Open to All</div>
+              </div>
+
+              <div class="events-list__item events-list__item--members-only">
+                <div class="events-list__date">
+                  <span class="events-list__month">Nov</span>
+                  <span class="events-list__day">1</span>
+                </div>
+                <div class="events-list__details">
+                  <h3 class="events-list__title">Post-Samhain Members Debrief</h3>
+                  <p class="events-list__meta">2:00 PM – 4:00 PM · Members Only · Online</p>
+                  <p class="events-list__description">
+                    Informal gathering to share reflections from Samhain and discuss upcoming
+                    winter programming. Video call link sent to RSVPs.
+                  </p>
+                  <div class="events-list__actions">
+                    <a
+                      href="https://forms.gle/YOUR_DEBRIEF_RSVP_FORM"
+                      class="btn btn--primary btn--sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="RSVP for Post-Samhain Debrief"
+                      >RSVP</a
+                    >
+                  </div>
+                </div>
+                <div class="events-list__badge events-list__badge--members">Members Only</div>
+              </div>
+
+              <div class="events-list__item">
+                <div class="events-list__date">
+                  <span class="events-list__month">Nov</span>
+                  <span class="events-list__day">5</span>
+                </div>
+                <div class="events-list__details">
+                  <h3 class="events-list__title">Full Moon Circle</h3>
+                  <p class="events-list__meta">8:00 PM – 9:30 PM · Creekside Meadow</p>
+                  <p class="events-list__description">
+                    Monthly outdoor full moon circle. Bring a blanket and something to offer.
+                    Weather permitting.
+                  </p>
+                  <div class="events-list__actions">
+                    <a
+                      href="https://forms.gle/YOUR_ESBAT_RSVP_FORM"
+                      class="btn btn--primary btn--sm"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="RSVP for Full Moon Circle November"
+                      >RSVP</a
+                    >
+                  </div>
+                </div>
+                <div class="events-list__badge events-list__badge--open">Open to All</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- RSVP Form Section -->
+          <section class="members-rsvp-section" aria-label="General RSVP form">
+            <h2>General RSVP / Event Notes</h2>
+            <p>
+              Use this form to submit questions, accessibility needs, or notes for any upcoming
+              event. For event-specific RSVPs, use the RSVP buttons above.
+            </p>
+            <div class="form-embed-wrapper">
+              <!-- Replace YOUR_GENERAL_RSVP_FORM_ID with actual Google Form ID -->
+              <iframe
+                src="https://docs.google.com/forms/d/e/YOUR_GENERAL_RSVP_FORM_ID/viewform?embedded=true"
+                title="General Event Notes and Accessibility Form"
+                class="form-embed"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                loading="lazy"
+              >
+                Loading form…
+                <a
+                  href="https://forms.gle/YOUR_GENERAL_RSVP_FORM_ID"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open form in new tab</a
+                >
+              </iframe>
+            </div>
+          </section>
+
+          <!-- Event Notes / Announcements -->
+          <section class="event-notes-section" aria-label="Event notes">
+            <h2>Event Notes &amp; Updates</h2>
+            <div class="event-note-card">
+              <strong>Samhain 2025 — Venue Update</strong>
+              <p>
+                Please note the venue for Samhain has changed to Riverside Community Center,
+                Hall B (not the usual Hall A). Parking is available in the north lot.
+              </p>
+            </div>
+            <div class="event-note-card">
+              <strong>Winter Schedule</strong>
+              <p>
+                The December and January event schedule will be posted by November 15th.
+                Check back here or watch your email for announcements.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- INCLUDE:footer -->
+
+    <script src="../assets/js/main.js" type="module"></script>
+    <script src="../assets/js/auth.js" type="module"></script>
+    <script src="../assets/js/events.js" type="module"></script>
+  </body>
+</html>

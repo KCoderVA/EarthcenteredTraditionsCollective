@@ -1,0 +1,75 @@
+name: Feature Request
+description: Suggest a new feature or improvement for the Earthcentered Traditions Collective website.
+title: "[Feature]: "
+labels:
+  - enhancement
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve our community website! Please describe your feature idea in as much detail as possible.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: A clear and concise description of the feature you'd like to see.
+      placeholder: "Describe the feature here..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Explain the problem this feature would solve, or the value it would provide to members.
+      placeholder: "As a [member/visitor], I want to [do something] so that [benefit]..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe how you envision this feature working. Feel free to include mockups or examples.
+      placeholder: "I would like to see..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you considered any alternative solutions or workarounds?
+      placeholder: "I also considered..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Site Area
+      description: Which part of the website does this feature relate to?
+      options:
+        - Homepage
+        - About Page
+        - Events Page
+        - Contact Page
+        - Members Portal
+        - Document Library
+        - Members Calendar
+        - Navigation / Layout
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other context, screenshots, or references that would help explain the request.
+      placeholder: "Additional context..."
+    validations:
+      required: false
